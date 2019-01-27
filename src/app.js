@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     console.log('uid', user.uid);
     // send the dispatch to run the login action with the correct user id
-    store.dispatch(login(user.id));
+    store.dispatch(login(user.uid));
     /* Wait for the initial data to be fetch then render the page */
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();
